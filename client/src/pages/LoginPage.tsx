@@ -1,10 +1,11 @@
 import React from 'react';
 import Center from 'layout/Center';
+import LoginForm from 'components/LoginForm/LoginForm';
 
 const LoginPage = () => {
     return (
         <Center>
-            <div>LoginPage</div>
+            <LoginForm/>
         </Center>
     );
 };
