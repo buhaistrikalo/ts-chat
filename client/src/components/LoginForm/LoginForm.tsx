@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import { Button, Container, TextField } from '@mui/material';
+import { useActions } from 'hooks/useActions';
+import { useId } from 'react';
 
 const LoginForm = () => {
     const [loginName, setLoginName] = useState('');
+    const { authUser } = useActions();
+    const authId = useId();
 
     const handleLoginName = (event: React.ChangeEvent<HTMLInputElement>) => {
         setLoginName(event?.target.value);
     };
 
     const handleClick = () => {
+        authUser({ id: authId, name: loginName, color: '#000' });
         // Записать в localStorage имя пользователя
         // Возможно присвоить индификатор
         // Редирект на страницу HomePage
