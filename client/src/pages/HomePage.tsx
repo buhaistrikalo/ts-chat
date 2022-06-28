@@ -1,15 +1,24 @@
-import { Container, Box, TextField, FormControl } from '@mui/material';
-import MessageForm from 'components/MessageForm';
-import Center from 'layout/Center';
+import { Container, Box, styled } from '@mui/material';
+import MessageForm from 'components/MessageForm'
+
+const ChatContainer = styled(Container)({
+    height: '100vh',
+    display: 'grid',
+    gridTemplateRows: '1fr 52px',
+    padding: 0,
+    '&:hover': {
+        color: '#2e8b57',
+    },
+});
 
 const HomePage = () => {
     return (
-        <Center>
-            <Container maxWidth="sm">
-                <Box sx={{ bgcolor: '#cfe8fc', height: '90vh' }}></Box>
-                <MessageForm />
-            </Container>
-        </Center>
+        // <Center>
+        <ChatContainer maxWidth="sm">
+            <Box sx={{ bgcolor: '#cfe8fc' }}></Box>
+            <MessageForm />
+        </ChatContainer>
+        // </Center>
     );
 };
 

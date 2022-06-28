@@ -32,12 +32,13 @@ const MessageForm = () => {
                     borderRadius: '0 0 10px 10px',
                 }}>
                 <TextField
-                    autoFocus
                     id="message"
                     placeholder="Напишите сообщение..."
                     variant="standard"
-                    value={message}
+                    autoFocus
+                    multiline
                     fullWidth
+                    value={message}
                     onChange={handleMessageChange}
                 />
                 <IconButton type="submit" disableRipple>
