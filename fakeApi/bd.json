@@ -1,0 +1,36 @@
+{
+  "messages": [
+    {
+      "id": 1,
+      "author": "Kirill",
+      "text": "Hello World",
+      "date": "today"
+    },
+    {
+      "id": 2,
+      "author": "Jonh",
+      "text": "Welcome",
+      "date": "today"
+    },
+    {
+      "id": ":r0:",
+      "author": {
+        "id": ":r0:",
+        "name": "123",
+        "color": "#000"
+      },
+      "text": "test",
+      "date": "Tue Jun 28 2022 18:02:33 GMT+0700 (Красноярск, стандартное время)"
+    },
+    {
+      "id": ":r0:Tue Jun 28 2022 18:10:52 GMT+0700 (Красноярск, стандартное время)",
+      "author": {
+        "id": ":r0:",
+        "name": "123",
+        "color": "#000"
+      },
+      "text": "new\n",
+      "date": "2022-06-28T11:10:52.405Z"
+    }
+  ]
+}

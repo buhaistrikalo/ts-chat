@@ -13,8 +13,7 @@ const LoginForm = () => {
     };
 
     const handleClick = () => {
-        authUser({ id: authId, name: loginName, color: '#000' });
-        // Записать в localStorage имя пользователя
+        authUser({ id: authId, name: loginName });
     };
 
     return (

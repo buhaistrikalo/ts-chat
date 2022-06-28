@@ -5,7 +5,6 @@ import { IUser } from 'types/IUser';
 const initialState: IUser = {
     id: 0,
     name: '',
-    color: '',
 };
 
 export const authUserSlice = createSlice({

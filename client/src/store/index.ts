@@ -1,5 +1,4 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { authUserReducer } from './reducers/auth.slice';
 
 import {
     persistStore,
@@ -11,7 +10,10 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
+
 import storage from 'redux-persist/lib/storage';
+import { authUserReducer } from './reducers/auth.slice';
+import { messagesAPI } from 'services/MessagesService';
 
 const persistConfig = {
     key: 'root',
@@ -21,6 +23,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     authUser: authUserReducer,
+    [messagesAPI.reducerPath]: messagesAPI.reducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -32,7 +35,7 @@ const store = configureStore({
             serializableCheck: {
                 ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
             },
-        }),
+        }).concat(messagesAPI.middleware),
 });
 
 export const setupStore = () => {
