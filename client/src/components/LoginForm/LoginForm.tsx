@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Container, TextField } from '@mui/material';
+import { Button, Container, FormControl, TextField } from '@mui/material';
 import { useActions } from 'hooks/useActions';
 import { useId } from 'react';
 
@@ -19,24 +19,29 @@ const LoginForm = () => {
 
     return (
         <Container maxWidth="xs">
-            <TextField
-                id="login-name"
-                label="Ваше имя"
-                variant="outlined"
-                fullWidth
-                value={loginName}
-                onChange={handleLoginName}
-                sx={{ marginBottom: 3 }}
-            />
-            {loginName === '' ? (
-                <Button variant="text" fullWidth size="large" disabled>
-                    Напишите имя для входа
-                </Button>
-            ) : (
-                <Button variant="contained" fullWidth size="large" onClick={handleClick}>
-                    Войти
-                </Button>
-            )}
+            <form onSubmit={handleClick}>
+                <FormControl fullWidth>
+                    <TextField
+                        autoFocus
+                        id="login-name"
+                        label="Ваше имя"
+                        variant="outlined"
+                        fullWidth
+                        value={loginName}
+                        onChange={handleLoginName}
+                        sx={{ marginBottom: 3 }}
+                    />
+                    {loginName === '' ? (
+                        <Button variant="text" fullWidth size="large" disabled>
+                            Напишите имя для входа
+                        </Button>
+                    ) : (
+                        <Button variant="contained" fullWidth size="large" onClick={handleClick}>
+                            Войти
+                        </Button>
+                    )}
+                </FormControl>
+            </form>
         </Container>
     );
 };
