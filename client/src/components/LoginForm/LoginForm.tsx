@@ -15,8 +15,6 @@ const LoginForm = () => {
     const handleClick = () => {
         authUser({ id: authId, name: loginName, color: '#000' });
         // Записать в localStorage имя пользователя
-        // Возможно присвоить индификатор
-        // Редирект на страницу HomePage
     };
 
     return (

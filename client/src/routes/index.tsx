@@ -6,7 +6,6 @@ import { useAppSelector } from 'hooks/useTypedSelector';
 
 export default function Router() {
     const { authUser } = useAppSelector(state => state)
-    const auth = false;
 
     return useRoutes([
         {
