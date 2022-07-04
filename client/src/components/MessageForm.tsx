@@ -3,9 +3,9 @@ import { Stack, TextField, IconButton } from '@mui/material';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import moment from 'moment';
 
-import { messagesAPI } from 'services/MessagesService';
 import { useAppSelector } from 'hooks/useTypedSelector';
 import Iconify from './Iconify';
+import { useActions } from 'hooks/useActions';
 
 type Inputs = {
     example: string;
@@ -16,7 +16,7 @@ const MessageForm = () => {
     const [message, setMessage] = React.useState('');
     const { handleSubmit } = useForm<Inputs>();
     const { authUser } = useAppSelector((state) => state);
-    const [createMessage] = messagesAPI.useCreateMessageMutation();
+    const { createMessage } = useActions();
 
     const handleMessageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMessage(event.target.value);

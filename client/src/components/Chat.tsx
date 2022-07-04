@@ -1,6 +1,6 @@
 import { Box, styled, Grid, Typography, Paper } from '@mui/material';
+import { useAppSelector } from 'hooks/useTypedSelector';
 import moment from 'moment';
-import { messagesAPI } from 'services/MessagesService';
 
 const MessageBox = styled(Paper)({
     width: '70%',
@@ -10,12 +10,11 @@ const MessageBox = styled(Paper)({
 });
 
 const Chat = () => {
-    const { data: messages, isLoading } = messagesAPI.useFetchAllMessagesQuery(0);
+    const { messages } = useAppSelector((state) => state);
 
     return (
         <Box sx={{ bgcolor: '#cfe8fc', padding: '10px 10px' }}>
-            {!isLoading &&
-                messages?.map((message) => {
+            {                messages?.map((message) => {
                     return (
                         <MessageBox elevation={3} key={message.id}>
                             <Typography color="primary.main" variant="subtitle2">
